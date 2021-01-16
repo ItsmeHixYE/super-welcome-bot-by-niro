@@ -110,9 +110,9 @@ if(!message.channel.guild) return message.reply(em3);
 if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(em1);
 if(!jmessage) return message.channel.send(em2);
 let niro_asta_embed_4 = new Discord.MessageEmbed()
-.setTitle('**Done The Welcome Image Has Been Setup**')
-.setDescription(`THIS IS NEW MESSAGE`)
-.setImage(welcome[message.guild.id].image)
+.setTitle('**Done The Welcome Message Has Been Setup**')
+.setDescription(`THIS IS NEW MESSAGE`,`\n${msg[message.guild.id].jmessage}`)
+.setImage(``)
 .addField('Requested By:', `${message.author}`)
 .setThumbnail(message.author.avatarURL())
 .setFooter(`${client.user.username} `)
@@ -131,7 +131,8 @@ let niro_asta_embed_1 = new Discord.MessageEmbed()
 .setThumbnail(member.user.displayAvatarURL({format: "gif", format: "png", dynamic: true, size: 1024}))
 .setDescription(`${msg[member.guild.id].jmessage}`)
 .setImage(`${image[member.guild.id].image}`)
-.addField(`\`User Name\` `,` \`${member.user.id}\``, true)
+.addField(`\`User Name\` `,` <@${member.user.id}>`, true)
+.addField(`\`User id\` `,` ${member.user.id}`, true)
 inviteChannel.send(niro_asta_embed_1);
 }).on("ready", () => {
   console.log(`
